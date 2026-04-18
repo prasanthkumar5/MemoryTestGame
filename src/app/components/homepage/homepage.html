@@ -1,0 +1,151 @@
+<div class="homepage-container">
+  <main class="hero-section">
+    <div class="header-badge">NEXT-GEN MEMORY TRAINING</div>
+    <h1 class="main-title">Memory <span class="gradient-text">Kinetic</span></h1>
+    <p class="subtitle">
+      Challenge your cognitive limits with high-octane memory matches. Experience <br>
+      fluid motion and electric visual feedback in every flip.
+    </p>
+
+    <div class="config-grid">
+      <!-- Card Content Card -->
+      <div class="config-card sidebar">
+        <div class="card-header">
+          <svg viewBox="0 0 24 24" width="20" height="20" class="header-icon">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <h3>Card Content</h3>
+        </div>
+        
+        <div class="option-list">
+          <div class="option-item" [class.selected]="selectedContent === 'icons'" (click)="selectContent('icons')">
+            <div class="option-info">
+              <span class="option-title">Abstract Icons</span>
+              <span class="option-desc">Geometric complexities</span>
+            </div>
+            <div class="radio-circle"></div>
+          </div>
+          
+          <div class="option-item" [class.selected]="selectedContent === 'numbers'" (click)="selectContent('numbers')">
+            <div class="option-info">
+              <span class="option-title">Numbers</span>
+              <span class="option-desc">Sequential logic patterns</span>
+            </div>
+            <div class="radio-circle"></div>
+          </div>
+
+          <div class="option-item" [class.selected]="selectedContent === 'emojis'" (click)="selectContent('emojis')">
+            <div class="option-info">
+              <span class="option-title">Neon Emojis</span>
+              <span class="option-desc">Vibrant visual markers</span>
+            </div>
+            <div class="radio-circle"></div>
+          </div>
+        </div>
+
+        <button class="start-btn" (click)="startGame()">
+          START GAME <span class="bolt">⚡</span>
+        </button>
+      </div>
+
+      <!-- Select Density Section -->
+      <div class="config-main">
+        <h2 class="section-title">Select Density</h2>
+        <p class="section-subtitle">Choose your level of kinetic challenge</p>
+
+        <div class="density-options">
+          <!-- Beginner -->
+          <div class="density-card" [class.selected]="selectedDensity === 'beginner'" (click)="selectDensity('beginner')">
+            <div class="density-header">
+              <span class="badge yellow">3X3</span>
+              <svg class="triangle-icon" viewBox="0 0 20 20"><path d="M0 0 L20 20 L0 20 Z" fill="currentColor"/></svg>
+            </div>
+            <div class="grid-preview beginner">
+              <div class="grid-cell" *ngFor="let i of grid3x3" [class.lit]="i === 3"></div>
+            </div>
+            <div class="density-info">
+              <h4>Beginner</h4>
+              <p>Quick session to warm up your kinetic flow.</p>
+            </div>
+          </div>
+
+          <!-- Intermediate -->
+          <div class="density-card recommended" [class.selected]="selectedDensity === 'intermediate'" (click)="selectDensity('intermediate')">
+            <div class="recommended-badge">RECOMMENDED</div>
+            <div class="density-header">
+              <span class="badge purple">4X4</span>
+              <svg class="triangle-icon" viewBox="0 0 20 20"><path d="M0 0 L20 20 L0 20 Z" fill="currentColor"/></svg>
+            </div>
+            <div class="grid-preview intermediate">
+              <div class="grid-cell" *ngFor="let i of grid4x4" [class.lit]="i === 2 || i === 10"></div>
+            </div>
+            <div class="density-info">
+              <h4>Intermediate</h4>
+              <p>The sweet spot for daily cognitive training.</p>
+            </div>
+          </div>
+
+          <!-- Expert -->
+          <div class="density-card" [class.selected]="selectedDensity === 'expert'" (click)="selectDensity('expert')">
+            <div class="density-header">
+              <span class="badge orange">5X5</span>
+              <svg class="triangle-icon" viewBox="0 0 20 20"><path d="M0 0 L20 20 L0 20 Z" fill="currentColor"/></svg>
+            </div>
+            <div class="grid-preview expert">
+              <div class="grid-cell" *ngFor="let i of grid5x5" [class.lit]="i === 7 || i === 13"></div>
+            </div>
+            <div class="density-info">
+              <h4>Expert</h4>
+              <p>Master-level density for the sharpest minds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-icon timer">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="stat-details">
+          <span class="stat-value">120ms</span>
+          <span class="stat-label">Average Reaction Time</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon players">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100-8 4 4 0 000 8zm14 14v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="stat-details">
+          <span class="stat-value">1,402</span>
+          <span class="stat-label">ACTIVE PLAYERS</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon iq">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="stat-details">
+          <span class="stat-value">+18%</span>
+          <span class="stat-label">GLOBAL MEMORY IQ</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-left">
+      <span class="footer-logo">Neon Kinetic</span>
+      <span class="copyright">© 2024 Neon Kinetic. Built for high-octane memory.</span>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Support</a>
+    </div>
+  </footer>
+</div>

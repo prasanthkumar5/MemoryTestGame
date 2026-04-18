@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700;900&display=swap');
+
+:root {
+  --bg-color: #08080c;
+  --card-bg: #12121a;
+  --card-border: rgba(255, 255, 255, 0.05);
+  --primary: #9b5df5;
+  --primary-alt: #6e45e2;
+  --secondary: #ff8c00;
+  --accent-cyan: #00f2ff;
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --glass: rgba(255, 255, 255, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+h1, h2, h3, .logo {
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(155, 93, 245, 0.5);
+}
